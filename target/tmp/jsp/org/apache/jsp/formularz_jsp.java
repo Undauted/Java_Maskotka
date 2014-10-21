@@ -42,7 +42,7 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
+      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
@@ -67,19 +67,26 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("pluszak", pluszak, PageContext.SESSION_SCOPE);
         }
       }
-      out.write("\n");
+      out.write('\n');
+
+pluszak.setImie("");
+pluszak.setRodzaj("");
+pluszak.setMaterial("");
+pluszak.setInteraktywna("");
+pluszak.setZdjecie("");
+out.println(pluszak.getImie());
       out.write("\n");
       out.write("<form action=\"dodanie.jsp\">\n");
       out.write("\n");
-      out.write("  Imie :<input type=\"text\" name=\"imie\" /><br /><br />\n");
+      out.write("  Imie :<input type=\"text\" name=\"imie\" required/><br /><br />\n");
       out.write("  Rodzaj maskotki : <br /><br />\n");
-      out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Mis\" />Mis<br />\n");
+      out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Mis\" checked/>Mis<br />\n");
       out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Zwierzątko\" />Zwierzątko<br />\n");
       out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Postać z bajki\" />Postać z bajki<br />\n");
       out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Postać z filmu\" />Postać z filmu<br />\n");
       out.write("   <input type=\"radio\"  name=\"rodzaj\" value=\"Pacynka\" />Pacynka<br /><br />\n");
       out.write("  Materiał wykonania : <br /><br />\n");
-      out.write("  <select name=\"material\"  size=\"4\">\n");
+      out.write("  <select name=\"material\"  size=\"4\" required>\n");
       out.write("\t<option value=\"Plusz\">Plusz</option>\n");
       out.write("\t<option value=\"Bawełna\">Bawełna</option>\n");
       out.write("\t<option value=\"Len\">Len</option>\n");
@@ -88,9 +95,9 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<option value=\"Polar\">Polar</option>\n");
       out.write("\t</select><br /><br />\n");
       out.write("\tCzy interaktywna ?? <br/><br/>\n");
-      out.write("\t<input type=\"radio\"  name=\"interaktywna\" value=\"Tak\" />Tak<br />\n");
+      out.write("\t<input type=\"radio\"  name=\"interaktywna\" value=\"Tak\" checked/>Tak<br />\n");
       out.write("  \t<input type=\"radio\"  name=\"interaktywna\" value=\"Nie\" />Nie<br /><br />\n");
-      out.write("  \tZdjecie :<input type=\"text\" name=\"zdjecie\" /><br /><br />\n");
+      out.write("  \tZdjecie :<input type=\"text\" name=\"zdjecie\" required/><br /><br />\n");
       out.write("  \t\n");
       out.write("  <input type=\"submit\" value=\" Akceptuj \">\n");
       out.write("\n");
