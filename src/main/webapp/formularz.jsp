@@ -21,7 +21,7 @@
   <input type="radio"  name="rodzaj" value="Postać z filmu" />Postać z filmu<br />
    <input type="radio"  name="rodzaj" value="Pacynka" />Pacynka<br /><br />
   Materiał wykonania : <br /><br />
-  <select name="material" multiple="multiple">
+  <select name="material"  size="4">
 	<option value="Plusz">Plusz</option>
 	<option value="Bawełna">Bawełna</option>
 	<option value="Len">Len</option>
@@ -33,8 +33,9 @@
 	<input type="radio"  name="interaktywna" value="Tak" />Tak<br />
   	<input type="radio"  name="interaktywna" value="Nie" />Nie<br /><br />
   	Zdjecie :<input type="text" name="zdjecie" /><br /><br />
+  	
   <input type="submit" value=" Akceptuj ">
-  
+
 </form>
 
 </body>

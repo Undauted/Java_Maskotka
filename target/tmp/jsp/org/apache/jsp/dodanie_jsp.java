@@ -93,7 +93,7 @@ public final class dodanie_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</p>\n");
       out.write("<p> <img src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getZdjecie()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" alt=\"Smiley face\" height=\"50\" width=\"50\"></p>\n");
+      out.write("\"  height=\"100\" width=\"100\"></p>\n");
       out.write("<p>\n");
       out.write("  <a href=\"wyswie.jsp\">Pokaż wszystkie pluszaki</a>\n");
       out.write("</p>\n");

@@ -16,7 +16,7 @@ int i=1;
   for (Maskotka pluszak : pamiec.getAll()) {
 	  
 	  out.println("<p>"+ i++ +"&nbsp;Imie: " + pluszak.getImie() + "<br/>&nbsp;&nbsp; Rodzaj maskotki: " + pluszak.getRodzaj() + "<br/>&nbsp;&nbsp;  Material wykonania: "+ pluszak.getMaterial() +"<br/>&nbsp;&nbsp; Interakcja:"+ pluszak.getInteraktywna()
-	  				+ "<br/>&nbsp;&nbsp;Zdjecie <img src=" + pluszak.getZdjecie() + "height='50' width='50'>" + "</p>");
+	  				+ "<br/>&nbsp;&nbsp; Zdjecie <img src='" + pluszak.getZdjecie() + "' height='200' width='200'>" + "</p>");
   }
 %>
 <p>

@@ -79,7 +79,7 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <input type=\"radio\"  name=\"rodzaj\" value=\"Postać z filmu\" />Postać z filmu<br />\n");
       out.write("   <input type=\"radio\"  name=\"rodzaj\" value=\"Pacynka\" />Pacynka<br /><br />\n");
       out.write("  Materiał wykonania : <br /><br />\n");
-      out.write("  <select name=\"material\" multiple=\"multiple\">\n");
+      out.write("  <select name=\"material\"  size=\"4\">\n");
       out.write("\t<option value=\"Plusz\">Plusz</option>\n");
       out.write("\t<option value=\"Bawełna\">Bawełna</option>\n");
       out.write("\t<option value=\"Len\">Len</option>\n");
@@ -91,8 +91,9 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<input type=\"radio\"  name=\"interaktywna\" value=\"Tak\" />Tak<br />\n");
       out.write("  \t<input type=\"radio\"  name=\"interaktywna\" value=\"Nie\" />Nie<br /><br />\n");
       out.write("  \tZdjecie :<input type=\"text\" name=\"zdjecie\" /><br /><br />\n");
+      out.write("  \t\n");
       out.write("  <input type=\"submit\" value=\" Akceptuj \">\n");
-      out.write("  \n");
+      out.write("\n");
       out.write("</form>\n");
       out.write("\n");
       out.write("</body>\n");

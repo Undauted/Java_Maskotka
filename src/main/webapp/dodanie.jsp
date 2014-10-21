@@ -23,7 +23,7 @@
 <p>Rodzaj maskotki: ${pluszak.getRodzaj()}</p>
 <p>Materiał wykonania: ${pluszak.getMaterial()}</p>
 <p>Interakywna: ${pluszak.getInteraktywna()}</p>
-<p> <img src="${pluszak.getZdjecie()}" alt="Smiley face" height="50" width="50"></p>
+<p> <img src="${pluszak.getZdjecie()}"  height="100" width="100"></p>
 <p>
   <a href="wyswie.jsp">Pokaż wszystkie pluszaki</a>
 </p>
