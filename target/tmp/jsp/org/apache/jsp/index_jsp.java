@@ -42,20 +42,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n");
-      out.write("   \"http://www.w3.org/TR/html4/loose.dtd\">\n");
+      out.write("<!DOCTYPE HTML>\n");
       out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Demo application</title>\n");
+      out.write("        <title>Maskotka</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h2>Simple demo application with Java EE 6 Servlet (3.0) and JSP</h2>\n");
+      out.write("     <!--   <h2>Simple demo application with Java EE 6 Servlet (3.0) and JSP</h2>\n");
       out.write("        <p><a href=\"hello\">See greetings from servlet</a></p>\n");
       out.write("        <p><a href=\"form\">Fill a form</a></p>\n");
-      out.write("        <p><a href=\"getPersonData.jsp\">Fill a Person form</a></p>\n");
-      out.write("        <p><a href=\"formularz.jsp\">Maskotka</a></p>\n");
+      out.write("        <p><a href=\"getPersonData.jsp\">Fill a Person form</a></p> -->\n");
+      out.write("        <h2><a href=\"formularz.jsp\">Maskotka</a></h2>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

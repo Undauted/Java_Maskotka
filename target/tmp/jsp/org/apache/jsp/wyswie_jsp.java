@@ -44,7 +44,7 @@ public final class wyswie_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
+      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
@@ -66,8 +66,14 @@ int i=1;
 
   for (Maskotka pluszak : pamiec.getAll()) {
 	  
-	  out.println("<p>"+ i++ +"&nbsp;Imie: " + pluszak.getImie() + "<br/>&nbsp;&nbsp; Rodzaj maskotki: " + pluszak.getRodzaj() + "<br/>&nbsp;&nbsp;  Material wykonania: "+ pluszak.getMaterial() +"<br/>&nbsp;&nbsp; Interakcja:"+ pluszak.getInteraktywna()
-	  				+ "<br/>&nbsp;&nbsp; Zdjecie <img src='" + pluszak.getZdjecie() + "' height='200' width='200'>" + "</p>");
+	  out.println("<p>"+ i++ +"&nbsp;Imie: " + pluszak.getImie() 
+	  				+ "<br/>&nbsp;&nbsp; Rodzaj maskotki: " + pluszak.getRodzaj() 
+	  				+ "<br/>&nbsp;&nbsp;  Material wykonania: "+ pluszak.getMaterial() 
+	  				+"<br/>&nbsp;&nbsp; Interakcja:"+ pluszak.getInteraktywna()
+	  				+ "<br/>&nbsp;&nbsp; Zdjecie:"
+	  				+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+	  				+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+	  				+"<img src='" + pluszak.getZdjecie() + "' height='120' width='120'>" + "</p>");
   }
 
       out.write("\n");
