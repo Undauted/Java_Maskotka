@@ -46,10 +46,28 @@ public final class dodanie_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>MASKOTKA</title>\n");
+      out.write("\t<title>MASKOTKA</title>\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"a.css\" type=\"text/css\" /> \n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write("<h2>MASKOTKA</h2>\n");
+      out.write("\t<div class=\"przesuniecie\">\n");
+      out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"przesuniecie2\">\n");
+      out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"glowna\">\n");
+      out.write("\t<div class=\"linki\">\n");
+      out.write("\t<div class=\"rusz\">\n");
+      out.write("\t\t<a href=\"http://localhost:8080/servletjspdemo/formularz.jsp\"  class=\"btn btn-primary active\">Strona Główna</a>\n");
+      out.write("\t\t<a href=\"http://localhost:8080/servletjspdemo/wyswie.jsp\" class=\"btn btn-primary active\">Lista maskotek</a>\n");
+      out.write("\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"reszta\">\n");
+      out.write("\t\t<h2>MASKOTKA</h2>\n");
+      out.write("\t</div>\n");
+      out.write("\t\t");
       com.example.servletjspdemo.domain.Maskotka pluszak = null;
       synchronized (session) {
         pluszak = (com.example.servletjspdemo.domain.Maskotka) _jspx_page_context.getAttribute("pluszak", PageContext.SESSION_SCOPE);
@@ -58,11 +76,13 @@ public final class dodanie_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("pluszak", pluszak, PageContext.SESSION_SCOPE);
         }
       }
-      out.write('\n');
-      out.write('\n');
+      out.write("\n");
+      out.write("\t\t\n");
+      out.write("\t\t");
       org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("pluszak"), request);
       out.write(" \n");
-      out.write("\n");
+      out.write("\t\t\n");
+      out.write("\t\t");
       com.example.servletjspdemo.service.Pamiec pamiec = null;
       synchronized (application) {
         pamiec = (com.example.servletjspdemo.service.Pamiec) _jspx_page_context.getAttribute("pamiec", PageContext.APPLICATION_SCOPE);
@@ -71,32 +91,75 @@ public final class dodanie_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("pamiec", pamiec, PageContext.APPLICATION_SCOPE);
         }
       }
-      out.write('\n');
-      out.write('\n');
+      out.write("\n");
+      out.write("\t\n");
+      out.write("\t");
  
-  pamiec.dodaj(pluszak);
-
+	
+	  pamiec.dodaj(pluszak);
+	
+	  
+	
       out.write("\n");
-      out.write("\n");
-      out.write("<p>Dane o maskotce zostały dodane poprawnie ;) </p>\n");
-      out.write("<p>Imie: ");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t\t<p>Dane o maskotce zostały dodane poprawnie ;) </p>\n");
+      out.write("\t</div>\n");
+      out.write("\t\n");
+      out.write("\t<div class=\"imie\">\n");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t  Imie :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\t  \t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\t  <input type=\"text\" name=\"imie\" id=\"my-textbox\" required size=\"30\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getImie()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" </p>\n");
-      out.write("<p>Rodzaj maskotki: ");
+      out.write("\" readonly /><br /><br />\n");
+      out.write("\t</div> \n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t\tRodzaj maskotki: \n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"dodanierodzaj\">\n");
+      out.write("\t\t<input type=\"radio\"  name=\"rodzaj\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getRodzaj()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</p>\n");
-      out.write("<p>Materiał wykonania: ");
+      out.write("\" checked/> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getRodzaj()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("\t</div>\n");
+      out.write("\t\n");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t\tMateriał wykonania:\n");
+      out.write("\t</div>\n");
+      out.write("\t\n");
+      out.write("\t<div class=\"dodaniematerial\">\n");
+      out.write("\t\t<select name=\"material\"  required size=\"1\" >\n");
+      out.write("\t\t\t<option value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getMaterial()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</p>\n");
-      out.write("<p>Interakywna: ");
+      out.write("\" >");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getMaterial()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</option>\n");
+      out.write("\t\t</select>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t\t<p>Interakywna: </p>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"dodaniematerial\">\n");
+      out.write("\t\t<input type=\"radio\"  name=\"interaktywna\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getInteraktywna()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</p>\n");
-      out.write("<p> <img src=\"");
+      out.write("\" checked/> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getInteraktywna()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"czcionka\">\n");
+      out.write("\t\tZdjęcie:\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"zdjecie\">\n");
+      out.write("\t\t<img src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pluszak.getZdjecie()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"  height=\"100\" width=\"100\"></p>\n");
-      out.write("<p>\n");
-      out.write("  <a href=\"wyswie.jsp\">Pokaż wszystkie pluszaki</a>\n");
-      out.write("</p>\n");
+      out.write("\"  height=\"100\" width=\"100\" alt=\"Brak zdjęcia\">\n");
+      out.write("\t</div> <br/>\n");
+      out.write("\t<div class=\"listaDodanie\">\n");
+      out.write("\t  <a href=\"wyswie.jsp\" class=\"btn btn-primary btn-large active\">Lista maskotek</a>\n");
+      out.write("\t</div>\n");
+      out.write("\t</div>\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {

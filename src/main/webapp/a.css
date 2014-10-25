@@ -1,0 +1,81 @@
+ body 	{background-color:#CC99FF}
+  .glowna {
+  		width: 600px;
+		margin:auto;
+		background: #FFFFCC;
+		padding: 15px;
+		border: 3px solid #CC3300; 
+		display: block;
+		margin:auto;
+		border-top-right-radius: 45px;
+		border-top-left-radius: 45px;
+		border-bottom-left-radius: 45px;
+		border-bottom-right-radius: 45px;
+  		}
+  .wyswie {
+  		width: 500px;
+		margin:auto;
+		background: #FFFFCC;
+		padding: 15px;
+		border: 3px solid #CC3300; 
+		display: block;
+		margin:auto;
+		border-top-right-radius: 45px;
+		border-top-left-radius: 45px;
+		border-bottom-left-radius: 45px;
+		border-bottom-right-radius: 45px;
+  
+  			}		
+  .reszta {
+  			text-align:center;
+  			font-size: 20px;}
+  .linki {
+  		width: 500px;
+		margin:auto;
+		background: #FFFFCC;
+		padding: 10px;
+		border: 1px solid #CC3300; 
+		display: block;
+		margin:auto;
+		border-top-right-radius: 45px;
+		border-top-left-radius: 45px;
+		border-bottom-left-radius: 45px;
+		border-bottom-right-radius: 45px;
+		
+  			}
+	a {text-decoration: none;
+		margin-left: 55px;}
+  h2   {color:blue;}
+  .czcionka	{font-size:17px;
+  			color:green;
+  				}
+  .k    {color:green;
+  			float:left;
+  			}
+  .radio	   {  margin-left: 60px;
+  					color:black;}
+  .lista		{  margin-left: 174px;
+  					color:black;
+  					text-decoration: none; }
+  .przesuniecie {	float:right;
+  					margin-top: 264px;}
+  .przesuniecie2 {	float:left;
+  					margin-top: 264px;}
+  .material 	{float:left;
+  				margin-left: 64px;
+  				color:green;}	
+  .interakcja 	{margin-left: 169px;}	
+  .imie		  	{color:green;
+  					}	
+  .rusz			{margin-left: 40px;}
+  .rusz2		{margin-left: 40px;}
+  .napisInter	{color:green;
+  					font-size:17px;
+  					margin-left: 184px;}
+  .dodanierodzaj		{margin-left: 184px;}
+  .dodaniematerial 	{margin-left: 184px;}
+  .zdjecie				{margin-left:200px;}
+  .listaDodanie 		{margin-left:165px;}
+  .wielkość 			{font-size:20px;}
+   .listaWyswie		{margin-left:135px;}
+   

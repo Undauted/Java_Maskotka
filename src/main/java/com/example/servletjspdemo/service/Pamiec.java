@@ -8,12 +8,18 @@ import com.example.servletjspdemo.domain.Maskotka;
 
 public class Pamiec {
 
-	private List<Maskotka> lista = new ArrayList<Maskotka>();
+	static List<Maskotka> lista = new ArrayList<Maskotka>();
 	
-	public void dodaj(Maskotka pluszak)
+	public static void dodaj(Maskotka pluszak)
 	{
 		Maskotka maskotka=new Maskotka(pluszak.getImie(),pluszak.getRodzaj(),pluszak.getMaterial(),pluszak.getInteraktywna(),pluszak.getZdjecie());
 		lista.add(maskotka);
+	}
+
+	public void usun(int numer)
+	{
+		
+		lista.remove(numer);
 	}
 	
 	public List<Maskotka> getAll()
@@ -21,5 +27,6 @@ public class Pamiec {
 		return lista;
 	}
 	
+
 	
 }
