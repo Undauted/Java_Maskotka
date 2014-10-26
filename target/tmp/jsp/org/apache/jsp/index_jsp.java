@@ -48,13 +48,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Maskotka</title>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">\n");
+      out.write("\t\t<link rel=\"stylesheet\" href=\"a.css\" type=\"text/css\" /> \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("    <div class=\"przesuniecie\">\n");
+      out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"przesuniecie2\">\n");
+      out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
+      out.write("\t</div>\n");
+      out.write("    <div class=\"reszta\">\n");
       out.write("     <!--   <h2>Simple demo application with Java EE 6 Servlet (3.0) and JSP</h2>\n");
       out.write("        <p><a href=\"hello\">See greetings from servlet</a></p>\n");
       out.write("        <p><a href=\"form\">Fill a form</a></p>\n");
       out.write("        <p><a href=\"getPersonData.jsp\">Fill a Person form</a></p> -->\n");
-      out.write("        <h2><a href=\"formularz.jsp\">Maskotka</a></h2>\n");
+      out.write("        \n");
+      out.write("        <h2><a href=\"formularz.jsp\" >Maskotka</a></h2>\n");
+      out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

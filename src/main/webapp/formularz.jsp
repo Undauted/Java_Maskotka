@@ -98,7 +98,7 @@
 </div> <br/>
   
 <div class="lista">
-	<select name="material"  required size="5">
+	<select name="material" required size="5" >
 		<option value="Plusz">Plusz</option>
 		<option value="Bawełna">Bawełna</option>
 		<option value="Len">Len</option>

@@ -159,7 +159,7 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div> <br/>\n");
       out.write("  \n");
       out.write("<div class=\"lista\">\n");
-      out.write("\t<select name=\"material\"  required size=\"5\">\n");
+      out.write("\t<select name=\"material\" required size=\"5\" >\n");
       out.write("\t\t<option value=\"Plusz\">Plusz</option>\n");
       out.write("\t\t<option value=\"Bawełna\">Bawełna</option>\n");
       out.write("\t\t<option value=\"Len\">Len</option>\n");
