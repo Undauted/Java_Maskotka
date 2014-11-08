@@ -9,8 +9,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="a.css" type="text/css" /> 
 
+
 </head>
-<body>
+<body >
 
 
 <div class="przesuniecie">
@@ -21,28 +22,55 @@
 </div>
 
 <div class="glowna">
+<%
+if(session.getAttribute("theName") == null)
+{	out.println("<div class='reszta'><h2>MASKOTKA</h2></div>");
+	out.println("<div class='napisyProjekt2'>Musisz się zalogować aby przejśc na tą strone.<br/>" 
+			+ "Stona automatycznie przejdzie do formularza logowania</div>");
+	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='logowanie.jsp';},3000)" 
+			+"</script>");
+	
+	return;
+}
+	
+%>
 <div class="linki">
 <div class="rusz">
 	<a href="http://localhost:8080/servletjspdemo/formularz.jsp"  class="btn btn-primary active">Strona Główna</a>
 	<a href="http://localhost:8080/servletjspdemo/wyswie.jsp" class="btn btn-primary active">Lista maskotek</a>
-</div>
-</div>
 
+	<a href ="http://localhost:8080/servletjspdemo/wylogowanie.jsp" class="btn btn-primary active">Wyloguj</a>
+
+</div>
+</div>
+<br />
+
+
+	<jsp:useBean id="rejestruj" class="jsp.rejestracja.Rejestracja" scope="session" />
+	<jsp:useBean id="pamiec1" class="com.example.servletjspdemo.service.Pamiec" scope="application" />
+	<jsp:useBean id="pluszak" class="com.example.servletjspdemo.domain.Maskotka" scope="session" />
+	<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
+<% 
+	
+
+		pluszak.setImie("");
+		pluszak.setRodzaj("");
+		pluszak.setMaterial("");
+		pluszak.setInteraktywna("");
+		pluszak.setZdjecie("");
+		
+	
+		
+		%>
 <div class="reszta">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Witaj <% out.print(session.getAttribute("theName")); %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
 	<h2>MASKOTKA</h2>
 </div>
-
-	<jsp:useBean id="pamiec" class="com.example.servletjspdemo.service.Pamiec" scope="application" />
-	<jsp:useBean id="pluszak" class="com.example.servletjspdemo.domain.Maskotka" scope="session" />
-<% 
-	pluszak.setImie("");
-	pluszak.setRodzaj("");
-	pluszak.setMaterial("");
-	pluszak.setInteraktywna("");
-	pluszak.setZdjecie("");
-	out.println(pluszak.getImie());
-%>
-
 <form action="dodanie.jsp">
 	<script type="text/javascript">
 		//<![CDATA[
@@ -66,12 +94,12 @@
 		    var charCode = evt.charCode;
 		 
 		    if (charCode != 0) {
-		        if (charCode < 65 || charCode > 122) {
+		    	  if (charCode < 65 || charCode > 122) {
 		            evt.preventDefault();
 		            alert(
 		                "Proszę używać tylko liter\n" 
 		            );
-		        }
+		    	   }
 		    }
 		}
 		 
@@ -130,6 +158,9 @@
   <input type="submit" value=" Akceptuj" class="btn btn-danger btn-large active">
 </div>
 </form>
+
+
+<div id='czas'></div>
 </div>
 </body>
 </html>

@@ -51,8 +51,9 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">\n");
       out.write("\t<link rel=\"stylesheet\" href=\"a.css\" type=\"text/css\" /> \n");
       out.write("\n");
+      out.write("\n");
       out.write("</head>\n");
-      out.write("<body>\n");
+      out.write("<body >\n");
       out.write("\n");
       out.write("\n");
       out.write("<div class=\"przesuniecie\">\n");
@@ -63,24 +64,50 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\n");
       out.write("\n");
       out.write("<div class=\"glowna\">\n");
+
+if(session.getAttribute("theName") == null)
+{	out.println("<div class='reszta'><h2>MASKOTKA</h2></div>");
+	out.println("<div class='napisyProjekt2'>Musisz się zalogować aby przejśc na tą strone.<br/>" 
+			+ "Stona automatycznie przejdzie do formularza logowania</div>");
+	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='logowanie.jsp';},3000)" 
+			+"</script>");
+	
+	return;
+}
+	
+
+      out.write("\n");
       out.write("<div class=\"linki\">\n");
       out.write("<div class=\"rusz\">\n");
       out.write("\t<a href=\"http://localhost:8080/servletjspdemo/formularz.jsp\"  class=\"btn btn-primary active\">Strona Główna</a>\n");
       out.write("\t<a href=\"http://localhost:8080/servletjspdemo/wyswie.jsp\" class=\"btn btn-primary active\">Lista maskotek</a>\n");
-      out.write("</div>\n");
-      out.write("</div>\n");
       out.write("\n");
-      out.write("<div class=\"reszta\">\n");
-      out.write("\t<h2>MASKOTKA</h2>\n");
+      out.write("\t<a href =\"http://localhost:8080/servletjspdemo/wylogowanie.jsp\" class=\"btn btn-primary active\">Wyloguj</a>\n");
+      out.write("\n");
       out.write("</div>\n");
+      out.write("</div>\n");
+      out.write("<br />\n");
+      out.write("\n");
       out.write("\n");
       out.write("\t");
-      com.example.servletjspdemo.service.Pamiec pamiec = null;
+      jsp.rejestracja.Rejestracja rejestruj = null;
+      synchronized (session) {
+        rejestruj = (jsp.rejestracja.Rejestracja) _jspx_page_context.getAttribute("rejestruj", PageContext.SESSION_SCOPE);
+        if (rejestruj == null){
+          rejestruj = new jsp.rejestracja.Rejestracja();
+          _jspx_page_context.setAttribute("rejestruj", rejestruj, PageContext.SESSION_SCOPE);
+        }
+      }
+      out.write('\n');
+      out.write('	');
+      com.example.servletjspdemo.service.Pamiec pamiec1 = null;
       synchronized (application) {
-        pamiec = (com.example.servletjspdemo.service.Pamiec) _jspx_page_context.getAttribute("pamiec", PageContext.APPLICATION_SCOPE);
-        if (pamiec == null){
-          pamiec = new com.example.servletjspdemo.service.Pamiec();
-          _jspx_page_context.setAttribute("pamiec", pamiec, PageContext.APPLICATION_SCOPE);
+        pamiec1 = (com.example.servletjspdemo.service.Pamiec) _jspx_page_context.getAttribute("pamiec1", PageContext.APPLICATION_SCOPE);
+        if (pamiec1 == null){
+          pamiec1 = new com.example.servletjspdemo.service.Pamiec();
+          _jspx_page_context.setAttribute("pamiec1", pamiec1, PageContext.APPLICATION_SCOPE);
         }
       }
       out.write('\n');
@@ -94,16 +121,38 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
       }
       out.write('\n');
+      out.write('	');
+      jsp.pamiecrejestracji.PamiećRejestracji pamiec = null;
+      synchronized (application) {
+        pamiec = (jsp.pamiecrejestracji.PamiećRejestracji) _jspx_page_context.getAttribute("pamiec", PageContext.APPLICATION_SCOPE);
+        if (pamiec == null){
+          pamiec = new jsp.pamiecrejestracji.PamiećRejestracji();
+          _jspx_page_context.setAttribute("pamiec", pamiec, PageContext.APPLICATION_SCOPE);
+        }
+      }
+      out.write('\n');
  
-	pluszak.setImie("");
-	pluszak.setRodzaj("");
-	pluszak.setMaterial("");
-	pluszak.setInteraktywna("");
-	pluszak.setZdjecie("");
-	out.println(pluszak.getImie());
+	
 
+		pluszak.setImie("");
+		pluszak.setRodzaj("");
+		pluszak.setMaterial("");
+		pluszak.setInteraktywna("");
+		pluszak.setZdjecie("");
+		
+	
+		
+		
       out.write("\n");
-      out.write("\n");
+      out.write("<div class=\"reszta\">\n");
+      out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\tWitaj ");
+ out.print(session.getAttribute("theName")); 
+      out.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\t<a href =\"http://localhost:8080/servletjspdemo/profil.jsp\" class=\"btn btn-primary active\">Twój profil</a>\n");
+      out.write("\t<h2>MASKOTKA</h2>\n");
+      out.write("</div>\n");
       out.write("<form action=\"dodanie.jsp\">\n");
       out.write("\t<script type=\"text/javascript\">\n");
       out.write("\t\t//<![CDATA[\n");
@@ -127,12 +176,12 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t    var charCode = evt.charCode;\n");
       out.write("\t\t \n");
       out.write("\t\t    if (charCode != 0) {\n");
-      out.write("\t\t        if (charCode < 65 || charCode > 122) {\n");
+      out.write("\t\t    \t  if (charCode < 65 || charCode > 122) {\n");
       out.write("\t\t            evt.preventDefault();\n");
       out.write("\t\t            alert(\n");
       out.write("\t\t                \"Proszę używać tylko liter\\n\" \n");
       out.write("\t\t            );\n");
-      out.write("\t\t        }\n");
+      out.write("\t\t    \t   }\n");
       out.write("\t\t    }\n");
       out.write("\t\t}\n");
       out.write("\t\t \n");
@@ -191,6 +240,9 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <input type=\"submit\" value=\" Akceptuj\" class=\"btn btn-danger btn-large active\">\n");
       out.write("</div>\n");
       out.write("</form>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<div id='czas'></div>\n");
       out.write("</div>\n");
       out.write("</body>\n");
       out.write("</html>");

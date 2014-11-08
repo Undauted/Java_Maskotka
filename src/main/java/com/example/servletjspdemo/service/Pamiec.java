@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.servletjspdemo.domain.Maskotka;
-
+import jsp.pamiecrejestracji.*;
 
 public class Pamiec {
 
