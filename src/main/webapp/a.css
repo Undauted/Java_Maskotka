@@ -25,7 +25,8 @@
 		border-bottom-left-radius: 45px;
 		border-bottom-right-radius: 45px;
   
-  			}		
+  			}	
+	
   .reszta {
   			text-align:center;
   			font-size: 20px;}
@@ -37,7 +38,7 @@
 		padding: 10px;
 		border: 1px solid #CC3300; 
 		display: block;
-		margin:auto;
+		
 		border-top-right-radius: 45px;
 		border-top-left-radius: 45px;
 		border-bottom-left-radius: 45px;
@@ -91,4 +92,14 @@
 	.lista2			{color:green;
 						font-size:17px;
 						text-align:center;}
-	
+	.witaj		{float:right;}		
+	.powitanie	{margin-left:130px;;
+					text-align:center;
+					font-size:22px;
+					}
+	.powitalna	{margin-left:85px;
+					}
+	.profil		{font-size:17px;
+				color:white;}		
+	.obrazek {float:right;
+				margin:40px}

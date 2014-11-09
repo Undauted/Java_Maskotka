@@ -16,10 +16,11 @@
 		<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 	</div>
 	
-	<div class="reszta">
+	
 	<div class="linki">
+	<div class="powitalna">
 		<a href="http://localhost:8080/servletjspdemo/logowanie.jsp" class="btn btn-primary active">Logowanie</a>
-	<a href="http://localhost:8080/servletjspdemo/rejestracja.jsp" class="btn btn-primary active">Rejestracja</a>
+		<a href="http://localhost:8080/servletjspdemo/rejestracja.jsp" class="btn btn-primary active">Rejestracja</a>
 	</div>
 	</div>
 	<br/><br/>
@@ -33,7 +34,7 @@
 		Maskotki mogą być wykonane przez producentów bądź własnoręcznie. 
 		Materiały z jakich są robione to najczęściej plusz, bawełna, len, dzianina, welur, polar.
 		<br/><br/>
-		Strona do skatalogowania swoich ulubionych pluszaków<br/><br/>
+		<b>Strona do skatalogowania swoich ulubionych pluszaków</b><br/><br/>
 	<img src="a.jpg" height='120' width='120' alt='Brak zdjęcia'>
 	<img src="b.jpg" height='120' width='120' alt='Brak zdjęcia'>	
 	<img src="c.jpg" height='120' width='120' alt='Brak zdjęcia'>

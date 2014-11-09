@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import jsp.rejestracja.Rejestracja;
 import com.example.servletjspdemo.domain.Maskotka;
 
 public final class wyswie_jsp extends org.apache.jasper.runtime.HttpJspBase
@@ -44,6 +45,7 @@ public final class wyswie_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("<head>\n");
@@ -63,7 +65,7 @@ public final class wyswie_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 		if(session.getAttribute("theName") == null)
 		{	
-			out.println("<div class='glowna'>");
+			out.println("<br/><br/><div class='glowna'>");
 			out.println("<div class='reszta'><h2>MASKOTKA</h2></div>");
 			out.println("<div class='napisyProjekt2'>Musisz się zalogować aby przejśc na tą strone.<br/>" 
 					+ "Stona automatycznie przejdzie do formularza logowania</div>");
@@ -93,18 +95,42 @@ public final class wyswie_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("pamiec1", pamiec1, PageContext.APPLICATION_SCOPE);
         }
       }
+      out.write('\n');
+      out.write('	');
+      jsp.pamiecrejestracji.PamiećRejestracji pamiec = null;
+      synchronized (application) {
+        pamiec = (jsp.pamiecrejestracji.PamiećRejestracji) _jspx_page_context.getAttribute("pamiec", PageContext.APPLICATION_SCOPE);
+        if (pamiec == null){
+          pamiec = new jsp.pamiecrejestracji.PamiećRejestracji();
+          _jspx_page_context.setAttribute("pamiec", pamiec, PageContext.APPLICATION_SCOPE);
+        }
+      }
       out.write("\n");
+      out.write("\t\t\n");
       out.write("\t<br/>\n");
       out.write("\t<div class=\"glowna\" style=\"overflow: auto; width:600px;  height: 480px\">\n");
-      out.write("\t<div class=\"reszta\">\n");
-      out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("\tWitaj ");
- out.print(session.getAttribute("theName")); 
-      out.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("\t<a href =\"http://localhost:8080/servletjspdemo/profil.jsp\" class=\"btn btn-primary active\">Twój profil</a>\n");
+      out.write("\t<div class=\"witaj\">\n");
+      out.write("\t\t<a href =\"http://localhost:8080/servletjspdemo/profil.jsp\" class=\"btn btn-primary active\">Twój profil</a>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"powitanie\">\n");
+      out.write("\t<b>\tWitaj \n");
+      out.write("\t\t");
+ 
+		 for(Rejestracja rejestracja : pamiec.getAll())
+		   {
+			   if(session.getAttribute("theName").equals(rejestracja.getLogin()))
+				{
+				   out.print(rejestracja.getImie());
+				}
+			}
+		
+      out.write("\n");
+      out.write("\t</b>\n");
       out.write("\t\n");
-      out.write("</div>\n");
+      out.write("\t</div>\t\n");
+      out.write("\t<div class=\"reszta\">\n");
+      out.write("\t\t<h2>MASKOTKA</h2>\n");
+      out.write("\t</div>\n");
 
 String przyciskUsun = request.getParameter("usun");
 

@@ -19,7 +19,7 @@
 <div class="przesuniecie2">
 	<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 </div>
-
+<br/><br/>
 <div class="glowna">
 
 <div class="linki">

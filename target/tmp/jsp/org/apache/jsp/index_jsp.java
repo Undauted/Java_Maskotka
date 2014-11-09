@@ -58,10 +58,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
       out.write("\t</div>\n");
       out.write("\t\n");
-      out.write("\t<div class=\"reszta\">\n");
+      out.write("\t\n");
       out.write("\t<div class=\"linki\">\n");
+      out.write("\t<div class=\"powitalna\">\n");
       out.write("\t\t<a href=\"http://localhost:8080/servletjspdemo/logowanie.jsp\" class=\"btn btn-primary active\">Logowanie</a>\n");
-      out.write("\t<a href=\"http://localhost:8080/servletjspdemo/rejestracja.jsp\" class=\"btn btn-primary active\">Rejestracja</a>\n");
+      out.write("\t\t<a href=\"http://localhost:8080/servletjspdemo/rejestracja.jsp\" class=\"btn btn-primary active\">Rejestracja</a>\n");
       out.write("\t</div>\n");
       out.write("\t</div>\n");
       out.write("\t<br/><br/>\n");
@@ -75,7 +76,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\tMaskotki mogą być wykonane przez producentów bądź własnoręcznie. \n");
       out.write("\t\tMateriały z jakich są robione to najczęściej plusz, bawełna, len, dzianina, welur, polar.\n");
       out.write("\t\t<br/><br/>\n");
-      out.write("\t\tStrona do skatalogowania swoich ulubionych pluszaków<br/><br/>\n");
+      out.write("\t\t<b>Strona do skatalogowania swoich ulubionych pluszaków</b><br/><br/>\n");
       out.write("\t<img src=\"a.jpg\" height='120' width='120' alt='Brak zdjęcia'>\n");
       out.write("\t<img src=\"b.jpg\" height='120' width='120' alt='Brak zdjęcia'>\t\n");
       out.write("\t<img src=\"c.jpg\" height='120' width='120' alt='Brak zdjęcia'>\n");

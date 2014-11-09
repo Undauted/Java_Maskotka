@@ -1,3 +1,4 @@
+<%@page import="jsp.rejestracja.Rejestracja"%>
 <%@page import="com.example.servletjspdemo.domain.Maskotka"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,7 +20,7 @@
 	<%
 		if(session.getAttribute("theName") == null)
 		{	
-			out.println("<div class='glowna'>");
+			out.println("<br/><br/><div class='glowna'>");
 			out.println("<div class='reszta'><h2>MASKOTKA</h2></div>");
 			out.println("<div class='napisyProjekt2'>Musisz się zalogować aby przejśc na tą strone.<br/>" 
 					+ "Stona automatycznie przejdzie do formularza logowania</div>");
@@ -40,15 +41,30 @@
 	</div>
 	
 	<jsp:useBean id="pamiec1" class="com.example.servletjspdemo.service.Pamiec" scope="application" />
+	<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
+		
 	<br/>
 	<div class="glowna" style="overflow: auto; width:600px;  height: 480px">
-	<div class="reszta">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	Witaj <% out.print(session.getAttribute("theName")); %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
+	<div class="witaj">
+		<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
+	</div>
+	<div class="powitanie">
+	<b>	Witaj 
+		<% 
+		 for(Rejestracja rejestracja : pamiec.getAll())
+		   {
+			   if(session.getAttribute("theName").equals(rejestracja.getLogin()))
+				{
+				   out.print(rejestracja.getImie());
+				}
+			}
+		%>
+	</b>
 	
-</div>
+	</div>	
+	<div class="reszta">
+		<h2>MASKOTKA</h2>
+	</div>
 <%
 String przyciskUsun = request.getParameter("usun");
 

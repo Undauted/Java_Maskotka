@@ -51,7 +51,7 @@ function validate_pass(p,r) {
 <div class="przesuniecie2">
 	<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 </div>
-
+<br/><br/>
 <div class="glowna">
 
 <div class="linki">
@@ -113,7 +113,7 @@ function validate_pass(p,r) {
 <div class="imie">
 <div class="czcionka">
   Login :&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="text" name="login" required size="42" /><br /><br />
+  <input type="text" name="login" pattern=".{4,}" title="4 znaki minimum" required size="42" /><br /><br />
 </div> </div>
 
 <br />

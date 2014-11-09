@@ -1,3 +1,4 @@
+<%@page import="jsp.rejestracja.Rejestracja"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,12 +22,12 @@
 	<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 </div>
 
-<div class="glowna">
+
 <%
 if(session.getAttribute("theName") == null)
-{	out.println("<div class='reszta'><h2>MASKOTKA</h2></div>");
+{	out.println("<br/><br/><div class='glowna'><div class='reszta'><h2>MASKOTKA</h2></div>");
 	out.println("<div class='napisyProjekt2'>Musisz się zalogować aby przejśc na tą strone.<br/>" 
-			+ "Stona automatycznie przejdzie do formularza logowania</div>");
+			+ "Stona automatycznie przejdzie do formularza logowania</div></div>");
 	
 	out.println("<script  type='text/javascript'>"
 			+"setTimeout(function(){location.href='logowanie.jsp';},3000)" 
@@ -36,14 +37,14 @@ if(session.getAttribute("theName") == null)
 }
 	
 %>
+<div class="glowna">
 <div class="linki">
-<div class="rusz">
+
 	<a href="http://localhost:8080/servletjspdemo/formularz.jsp"  class="btn btn-primary active">Strona Główna</a>
 	<a href="http://localhost:8080/servletjspdemo/wyswie.jsp" class="btn btn-primary active">Lista maskotek</a>
-
 	<a href ="http://localhost:8080/servletjspdemo/wylogowanie.jsp" class="btn btn-primary active">Wyloguj</a>
 
-</div>
+
 </div>
 <br />
 
@@ -64,13 +65,26 @@ if(session.getAttribute("theName") == null)
 	
 		
 		%>
-<div class="reszta">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	Witaj <% out.print(session.getAttribute("theName")); %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="witaj">
 	<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
+</div>
+<div class="powitanie">
+	<b>Witaj 
+	<% 
+	 for(Rejestracja rejestracja : pamiec.getAll())
+	   {
+		   if(session.getAttribute("theName").equals(rejestracja.getLogin()))
+			{
+			   out.print(rejestracja.getImie());
+			}
+		}
+	%>
+	</b>
+</div>	
+<div class="reszta">
 	<h2>MASKOTKA</h2>
 </div>
+
 <form action="dodanie.jsp">
 	<script type="text/javascript">
 		//<![CDATA[

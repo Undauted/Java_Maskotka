@@ -26,8 +26,5 @@ static List<Rejestracja> lista = new ArrayList<Rejestracja>();
 		return lista;
 	}
 	
-	public void edytuj(int numer,Rejestracja haslo)
-	{
-		lista.set(numer, haslo);
-	}
+
 }
