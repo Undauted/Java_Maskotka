@@ -1,3 +1,5 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page import="jsp.rejestracja.Rejestracja"%>
 <%@page import="com.example.servletjspdemo.domain.Maskotka"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -47,6 +49,12 @@
 	<div class="glowna" style="overflow: auto; width:600px;  height: 480px">
 	<div class="witaj">
 		<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
+	</div>
+	<div class="data">
+	<c:set var="now" value="<%=new java.util.Date()%>" />
+	<b><fmt:formatDate type="date" 
+	            dateStyle="medium"
+	            value="${now}" /></b>
 	</div>
 	<div class="powitanie">
 	<b>	Witaj 

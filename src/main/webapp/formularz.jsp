@@ -1,3 +1,5 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page import="jsp.rejestracja.Rejestracja"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -37,6 +39,7 @@ if(session.getAttribute("theName") == null)
 }
 	
 %>
+
 <div class="glowna">
 <div class="linki">
 
@@ -68,6 +71,12 @@ if(session.getAttribute("theName") == null)
 <div class="witaj">
 	<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
 </div>
+<div class="data">
+<c:set var="now" value="<%=new java.util.Date()%>" />
+<b><fmt:formatDate type="date" 
+            dateStyle="medium"
+            value="${now}" /></b>
+</div>
 <div class="powitanie">
 	<b>Witaj 
 	<% 
@@ -81,10 +90,13 @@ if(session.getAttribute("theName") == null)
 	%>
 	</b>
 </div>	
+
 <div class="reszta">
 	<h2>MASKOTKA</h2>
 </div>
-
+<div class="witaj">
+<a href ="http://localhost:8080/servletjspdemo/miniGra.jsp" class="btn btn-primary active">MiniGra</a>
+</div>
 <form action="dodanie.jsp">
 	<script type="text/javascript">
 		//<![CDATA[
@@ -99,7 +111,7 @@ if(session.getAttribute("theName") == null)
 <div class="imie">
 <div class="czcionka">
   Imie :&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="text" name="imie" id="my-textbox" required size="42" onchange="initCap(this)"/><br /><br />
+  <input type="text" name="imie" id="my-textbox" required size="38" onchange="initCap(this)"/><br /><br />
 </div> </div>
 	<script>
 		var myTextbox = document.getElementById('my-textbox');
@@ -168,13 +180,15 @@ if(session.getAttribute("theName") == null)
 </div>
 </div>
 <br /><br />
+
 <div class="reszta">
   <input type="submit" value=" Akceptuj" class="btn btn-danger btn-large active">
 </div>
+
 </form>
 
 
-<div id='czas'></div>
+
 </div>
 </body>
 </html>

@@ -12,11 +12,16 @@
 <script type="text/javascript">
 
 function validate(form)
-{
+{	if(form.wiek.value >18)
+	{
+	alert('Jestes za stary');
+	form.wiek.value="";
+	}
+else
    if(form.imie.value.substr(form.imie.value.length-1, 1) == 'a') {
-      alert('Miło że Pani się zarejestrowała ;)');
+      alert('Miło dziewczynko że się zarejestrowałaś ;)');
    } else {
-      alert('Miło że Pan się zarejestrował ;)');
+      alert('Miło chłopczyku zę się zarejestrowałeś ;)');
    }
 
    // \d{9} - 9 kolejnych cyfr

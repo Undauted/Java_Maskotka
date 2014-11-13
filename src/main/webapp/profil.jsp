@@ -1,3 +1,5 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page import="jsp.rejestracja.Rejestracja"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -45,9 +47,16 @@ if(session.getAttribute("theName") == null)
 <br />
 		<jsp:useBean id="rejestruj1" class="jsp.rejestracja.Rejestracja" scope="session" />
 		<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
-		
-
-<div class="reszta">
+<div class="witaj">
+	<a href ="http://localhost:8080/servletjspdemo/profil.jsp" class="btn btn-primary active">Twój profil</a>
+</div>		
+<div class="data">
+	<c:set var="now" value="<%=new java.util.Date()%>" />
+	<b><fmt:formatDate type="date" 
+	            dateStyle="medium"
+	            value="${now}" /></b>
+	</div>
+<div class="powitanie">
 	<b>Witaj 
 	<% 
 	 for(Rejestracja rejestracja : pamiec.getAll())
@@ -59,8 +68,10 @@ if(session.getAttribute("theName") == null)
 		}
 	%>
 	</b>
+</div>
+<div class="reszta">
 	<h2>MASKOTKA</h2>
-</div>	<br />
+</div>	
 <%
 
    for(Rejestracja rejestruj : pamiec.getAll())

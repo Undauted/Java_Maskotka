@@ -12,10 +12,23 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.Vector _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_set_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public Object getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_set_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_set_var_value_nobody.release();
+    _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -42,6 +55,8 @@ public final class formularz_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -80,6 +95,7 @@ if(session.getAttribute("theName") == null)
 }
 	
 
+      out.write("\n");
       out.write("\n");
       out.write("<div class=\"glowna\">\n");
       out.write("<div class=\"linki\">\n");
@@ -149,6 +165,25 @@ if(session.getAttribute("theName") == null)
       out.write("<div class=\"witaj\">\n");
       out.write("\t<a href =\"http://localhost:8080/servletjspdemo/profil.jsp\" class=\"btn btn-primary active\">Twój profil</a>\n");
       out.write("</div>\n");
+      out.write("<div class=\"data\">\n");
+      //  c:set
+      org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_set_0 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _jspx_tagPool_c_set_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+      _jspx_th_c_set_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_set_0.setParent(null);
+      _jspx_th_c_set_0.setVar("now");
+      _jspx_th_c_set_0.setValue(new java.util.Date());
+      int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
+      if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
+        return;
+      }
+      _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
+      out.write("\n");
+      out.write("<b>");
+      if (_jspx_meth_fmt_formatDate_0(_jspx_page_context))
+        return;
+      out.write("</b>\n");
+      out.write("</div>\n");
       out.write("<div class=\"powitanie\">\n");
       out.write("\t<b>Witaj \n");
       out.write("\t");
@@ -164,10 +199,13 @@ if(session.getAttribute("theName") == null)
       out.write("\n");
       out.write("\t</b>\n");
       out.write("</div>\t\n");
+      out.write("\n");
       out.write("<div class=\"reszta\">\n");
       out.write("\t<h2>MASKOTKA</h2>\n");
       out.write("</div>\n");
-      out.write("\n");
+      out.write("<div class=\"witaj\">\n");
+      out.write("<a href =\"http://localhost:8080/servletjspdemo/miniGra.jsp\" class=\"btn btn-primary active\">MiniGra</a>\n");
+      out.write("</div>\n");
       out.write("<form action=\"dodanie.jsp\">\n");
       out.write("\t<script type=\"text/javascript\">\n");
       out.write("\t\t//<![CDATA[\n");
@@ -182,7 +220,7 @@ if(session.getAttribute("theName") == null)
       out.write("<div class=\"imie\">\n");
       out.write("<div class=\"czcionka\">\n");
       out.write("  Imie :&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("  <input type=\"text\" name=\"imie\" id=\"my-textbox\" required size=\"42\" onchange=\"initCap(this)\"/><br /><br />\n");
+      out.write("  <input type=\"text\" name=\"imie\" id=\"my-textbox\" required size=\"38\" onchange=\"initCap(this)\"/><br /><br />\n");
       out.write("</div> </div>\n");
       out.write("\t<script>\n");
       out.write("\t\tvar myTextbox = document.getElementById('my-textbox');\n");
@@ -251,13 +289,15 @@ if(session.getAttribute("theName") == null)
       out.write("</div>\n");
       out.write("</div>\n");
       out.write("<br /><br />\n");
+      out.write("\n");
       out.write("<div class=\"reszta\">\n");
       out.write("  <input type=\"submit\" value=\" Akceptuj\" class=\"btn btn-danger btn-large active\">\n");
       out.write("</div>\n");
+      out.write("\n");
       out.write("</form>\n");
       out.write("\n");
       out.write("\n");
-      out.write("<div id='czas'></div>\n");
+      out.write("\n");
       out.write("</div>\n");
       out.write("</body>\n");
       out.write("</html>");
@@ -272,5 +312,25 @@ if(session.getAttribute("theName") == null)
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_fmt_formatDate_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  fmt:formatDate
+    org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag _jspx_th_fmt_formatDate_0 = (org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag) _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag.class);
+    _jspx_th_fmt_formatDate_0.setPageContext(_jspx_page_context);
+    _jspx_th_fmt_formatDate_0.setParent(null);
+    _jspx_th_fmt_formatDate_0.setType("date");
+    _jspx_th_fmt_formatDate_0.setDateStyle("medium");
+    _jspx_th_fmt_formatDate_0.setValue((java.util.Date) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${now}", java.util.Date.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_fmt_formatDate_0 = _jspx_th_fmt_formatDate_0.doStartTag();
+    if (_jspx_th_fmt_formatDate_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody.reuse(_jspx_th_fmt_formatDate_0);
+      return true;
+    }
+    _jspx_tagPool_fmt_formatDate_value_type_dateStyle_nobody.reuse(_jspx_th_fmt_formatDate_0);
+    return false;
   }
 }
