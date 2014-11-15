@@ -176,7 +176,7 @@ if(session.getAttribute("theName") == null)
   	
 <div class="k"> 
 <div class="czcionka">
-  	Zdjecie: <input type="text" name="zdjecie" required size="42"/>
+  	Zdjecie: <input type="text" name="zdjecie" size="42"/>
 </div>
 </div>
 <br /><br />
