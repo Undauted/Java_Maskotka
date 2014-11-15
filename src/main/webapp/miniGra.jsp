@@ -92,7 +92,12 @@
     
       </c:if>
 
-      <c:if test="${param.guess=='Zwierzątko'}">Zgadłeś
+      <c:if test="${param.guess=='Zwierzątko'}">Zgadłeś<br />
+      Wracasz do strony głównej :)
+         <script  type="text/javascript"> 
+    setTimeout(function(){location.href="formularz.jsp";}, 3000);
+	</script>
+      
       <br />
       <br />
 
@@ -101,7 +106,7 @@
     </c:if>
 </div>
     <form method="post">
-    <div class="czcionka">Zgadnij mojego ulubionego pluszaka?</div>
+    <div class="czcionka">Zgadnij mojego ulubionego pluszaka?<br/> Jeżeli źle zgadniesz zostaniesz wylogowany :D</div>
     <div class="radio">
  		<input type="radio"  name="guess" value="Mis" checked/> Mis<br />
   		<input type="radio"  name="guess" value="Zwierzątko" /> Zwierzątko<br />

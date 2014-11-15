@@ -14,10 +14,20 @@
 function validate(form)
 {	if(form.wiek.value >18)
 	{
-	alert('Jestes za stary');
+	alert('Jestes za stary . Musisz mieć maksimum 18 lat');
 	form.wiek.value="";
 	}
-else
+	else
+	if(form.wiek.value== "" || form.imie.value =="" || form.login.value=="" || form.haslo.value=="" || form.repPass.value=="")
+	{
+		alert('Wszystkie pola muszą być wypełnione');
+	}
+	else
+		if(form.login.value.length < 4)
+			{
+			alert('Login za krótki . Wymagane minimum 4 znaki');
+			}
+	else
    if(form.imie.value.substr(form.imie.value.length-1, 1) == 'a') {
       alert('Miło dziewczynko że się zarejestrowałaś ;)');
    } else {
@@ -126,7 +136,8 @@ function validate_pass(p,r) {
 <div class="czcionka">
   Hasło :&nbsp;&nbsp;&nbsp;&nbsp;
  <input type="password" name="haslo" id="pass" required size="15"/>
-  &nbsp;&nbsp;Powtórz hasło:&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
+  Powtórz hasło:&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="password" name="repPass" id="repPass" onchange="return validate_pass('pass','repPass')" required size="15"/>
   <br /><br />
 </div> </div>

@@ -41,16 +41,18 @@
 		if(rejestruj.getLogin().equals(rejestrowanie.getLogin().toString()))
 		{
 			out.println("<div class='napisyProjekt2'>Konto o podanym loginie juz istnieje :(<br/><br/></div>");
-			out.println("<div class='listaWyswie'><a href='rejestracja.jsp' class='btn btn-primary active'>Wróć do rejestracji</A></div>");
-			
+			out.println("<script  type='text/javascript'>"
+					+"setTimeout(function(){location.href='rejestracja.jsp';}, 2000);" 
+					+"</script>");
 			return;
 			
 		}
 	} 
 	pamiec.dodaj(rejestruj);
 	out.println("<div class='napisyProjekt2'>Konto zostało założone pomyślnie ;)<br/><br/></div>");
-	out.println("<div class='listaWyswie'><a href='index.jsp' class='btn btn-primary active'>Wróć do strony głównej</A></div>");
-	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='index.jsp';}, 2000);" 
+			+"</script>");
 	
 	  
 	%>
