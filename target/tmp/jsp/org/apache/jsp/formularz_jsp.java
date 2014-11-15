@@ -285,7 +285,7 @@ if(session.getAttribute("theName") == null)
       out.write("  \t\n");
       out.write("<div class=\"k\"> \n");
       out.write("<div class=\"czcionka\">\n");
-      out.write("  \tZdjecie: <input type=\"text\" name=\"zdjecie\" required size=\"42\"/>\n");
+      out.write("  \tZdjecie: <input type=\"text\" name=\"zdjecie\" size=\"42\"/>\n");
       out.write("</div>\n");
       out.write("</div>\n");
       out.write("<br /><br />\n");

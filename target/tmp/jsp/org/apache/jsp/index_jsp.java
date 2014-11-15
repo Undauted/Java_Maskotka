@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import jsp.rejestracja.Rejestracja;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -42,6 +43,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("<head>\n");
@@ -57,7 +59,35 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<div class=\"przesuniecie2\">\n");
       out.write("\t\t<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png\" height='300' width='300'>\n");
       out.write("\t</div>\n");
+      out.write("\t");
+      jsp.pamiecrejestracji.PamiećRejestracji pamiec = null;
+      synchronized (application) {
+        pamiec = (jsp.pamiecrejestracji.PamiećRejestracji) _jspx_page_context.getAttribute("pamiec", PageContext.APPLICATION_SCOPE);
+        if (pamiec == null){
+          pamiec = new jsp.pamiecrejestracji.PamiećRejestracji();
+          _jspx_page_context.setAttribute("pamiec", pamiec, PageContext.APPLICATION_SCOPE);
+        }
+      }
+      out.write("\n");
       out.write("\t\n");
+      out.write("\t");
+
+	
+	if(session.getAttribute("theName") != null)
+		
+{	out.println("<br/><br/><div class='glowna'><div class='reszta'><h2>MASKOTKA</h2></div>");
+	out.println("<div class='napisyProjekt2'>Jesteś zalogowowany.<br/>" 
+			+ "Stona automatycznie przejdzie do formularza dodawania maskotki</div></div>");
+	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='formularz.jsp';},3000)" 
+			+"</script>");
+	
+	return;
+}
+	
+
+      out.write("\n");
       out.write("\t\n");
       out.write("\t<div class=\"linki\">\n");
       out.write("\t<div class=\"powitalna\">\n");
@@ -66,6 +96,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\n");
       out.write("\t</div>\n");
       out.write("\t<br/><br/>\n");
+      out.write("\t\n");
       out.write("\t<div class=\"glowna\">\n");
       out.write("\t<div class=\"reszta\">\n");
       out.write("\t\t<h2>MASKOTKA</h2>\n");

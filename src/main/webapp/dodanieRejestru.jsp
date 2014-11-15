@@ -17,6 +17,27 @@
 		<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 	</div>
 	<br/><br/>
+	<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
+	
+	<%
+	
+
+	if(session.getAttribute("theName") != null)
+		
+{	out.println("<br/><br/><div class='glowna'><div class='reszta'><h2>MASKOTKA</h2></div>");
+	out.println("<div class='napisyProjekt2'>Jesteś zalogowowany.<br/>" 
+			+ "Stona automatycznie przejdzie do formularza dodawania maskotki</div></div>");
+	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='formularz.jsp';},3000)" 
+			+"</script>");
+	
+	return;
+}
+	
+	
+	
+%>
 	<div class="glowna">
 	
 	<div class="linki">
@@ -31,8 +52,7 @@
 		
 		<jsp:setProperty name="rejestruj" property="*" /> 
 		
-		<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
-	
+		
 	<% 
 	
 	for (Rejestracja rejestrowanie : pamiec.getAll()) 

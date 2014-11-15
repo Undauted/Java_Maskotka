@@ -19,22 +19,45 @@
 	
 		<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
 	<br/><br/>
+	
+	<%
+	
+
+	   if(session.getAttribute("theName") != null)
+		
+{	out.println("<br/><br/><div class='glowna'><div class='reszta'><h2>MASKOTKA</h2></div>");
+	out.println("<div class='napisyProjekt2'>Jesteś zalogowowany.<br/>" 
+			+ "Stona automatycznie przejdzie do formularza dodawania maskotki</div></div>");
+	
+	out.println("<script  type='text/javascript'>"
+			+"setTimeout(function(){location.href='formularz.jsp';},3000)" 
+			+"</script>");
+	return;
+	
+}
+	
+	
+
+	
+%>
 	<div class="glowna">
 	<div class="reszta">
 		<h2>MASKOTKA</h2>
 	</div>
 <%
    String login = request.getParameter( "login" );
-   session.setAttribute( "theName", login );
+  
    String password = request.getParameter("password");
-   session.setAttribute("thePassword", password);
+  
    
 	for (Rejestracja rejestruj : pamiec.getAll()) 
 	{ 	
 	
-	if(session.getAttribute( "theName" ).toString().equals(rejestruj.getLogin().toString()) 
-			&& session.getAttribute( "thePassword" ).toString().equals(rejestruj.getHaslo().toString()))
+	if(login.toString().equals(rejestruj.getLogin().toString()) 
+			&& password.toString().equals(rejestruj.getHaslo().toString()))
 	{
+		 session.setAttribute( "theName", login );
+		 session.setAttribute("thePassword", password);
 		out.println("<script  type='text/javascript'>"
 				+"location.href='formularz.jsp';" 
 				+"</script>");

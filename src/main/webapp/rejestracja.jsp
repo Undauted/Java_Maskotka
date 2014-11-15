@@ -1,3 +1,4 @@
+<%@page import="jsp.rejestracja.Rejestracja"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ function validate(form)
 	   if(form.imie.value.substr(form.imie.value.length-1, 1) == 'a') {
 	      alert('Miło dziewczynko że się zarejestrowałaś ;)');
 	   } else {
-	      alert('Miło chłopczyku zę się zarejestrowałeś ;)');
+	      alert('Miło chłopczyku że się zarejestrowałeś ;)');
    }
 
    // \d{9} - 9 kolejnych cyfr
@@ -66,6 +67,8 @@ function validate_pass(p,r) {
 </head>
 <body>
 
+<jsp:useBean id="rejestruj1" class="jsp.rejestracja.Rejestracja" scope="session" />
+		<jsp:useBean id="pamiec" class="jsp.pamiecrejestracji.PamiećRejestracji" scope="application" />
 
 <div class="przesuniecie">
 	<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
@@ -74,6 +77,20 @@ function validate_pass(p,r) {
 	<img src="http://cdn.bulbagarden.net/upload/thumb/7/72/613Cubchoo.png/180px-613Cubchoo.png" height='300' width='300'>
 </div>
 <br/><br/>
+<%
+if(session.getAttribute("theName") != null)
+	
+{	out.println("<br/><br/><div class='glowna'><div class='reszta'><h2>MASKOTKA</h2></div>");
+out.println("<div class='napisyProjekt2'>Jesteś zalogowowany.<br/>" 
+		+ "Stona automatycznie przejdzie do formularza dodawania maskotki</div></div>");
+
+out.println("<script  type='text/javascript'>"
+		+"setTimeout(function(){location.href='formularz.jsp';},3000)" 
+		+"</script>");
+return;
+
+}
+%>
 <div class="glowna">
 
 <div class="linki">
