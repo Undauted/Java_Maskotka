@@ -23,15 +23,22 @@ function validate(form)
 		alert('Wszystkie pola muszą być wypełnione');
 	}
 	else
-		if(form.login.value.length < 4)
-			{
-			alert('Login za krótki . Wymagane minimum 4 znaki');
-			}
+	if(form.login.value.length < 4)
+	{
+		alert('Login za krótki . Wymagane minimum 4 znaki');
+	}
 	else
-   if(form.imie.value.substr(form.imie.value.length-1, 1) == 'a') {
-      alert('Miło dziewczynko że się zarejestrowałaś ;)');
-   } else {
-      alert('Miło chłopczyku zę się zarejestrowałeś ;)');
+	if(form.haslo.value.length < 4)
+	{
+		alert('Haslo za krótkie . Wymagane minimum 4 znaki ');
+		form.haslo.value="";
+		form.repPass.value="";
+	}
+	else
+	   if(form.imie.value.substr(form.imie.value.length-1, 1) == 'a') {
+	      alert('Miło dziewczynko że się zarejestrowałaś ;)');
+	   } else {
+	      alert('Miło chłopczyku zę się zarejestrowałeś ;)');
    }
 
    // \d{9} - 9 kolejnych cyfr
